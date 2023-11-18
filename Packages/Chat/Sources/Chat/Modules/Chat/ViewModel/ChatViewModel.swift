@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-public typealias ChatPaginationClosure = (Message) -> Void
+public typealias ChatPaginationHandler = (Message) -> Void
 
 final class ChatViewModel: ObservableObject {
     
