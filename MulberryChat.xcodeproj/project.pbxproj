@@ -19,6 +19,7 @@
 		D6620EF02B08DC0E007AC8C2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D6620EF22B08DC10007AC8C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D6620EF52B08DC10007AC8C2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D69666932B08E74E0012C659 /* MediaPicker */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MediaPicker; path = Packages/MediaPicker; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +36,7 @@
 		D6620EE22B08DC0E007AC8C2 = {
 			isa = PBXGroup;
 			children = (
+				D69666932B08E74E0012C659 /* MediaPicker */,
 				D6620EED2B08DC0E007AC8C2 /* MulberryChat */,
 				D6620EEC2B08DC0E007AC8C2 /* Products */,
 			);
