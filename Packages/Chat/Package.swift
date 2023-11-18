@@ -26,7 +26,8 @@ let package = Package(
             name: "Chat",
             dependencies: [
                 "MediaPicker"
-            ]
+            ],
+            resources: [.process("Resources")]
         ),
         .testTarget(
             name: "ChatTests",

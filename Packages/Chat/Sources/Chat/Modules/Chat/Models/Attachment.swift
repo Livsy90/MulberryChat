@@ -12,21 +12,37 @@ public struct Attachment: Codable, Identifiable, Hashable {
     public let id: String
     public let thumbnail: URL
     public let full: URL
-    public let type: AttachmentKind
-
-    public init(id: String, thumbnail: URL, full: URL, type: AttachmentKind) {
+    public let type: AttachmentType
+    
+    public init(
+        id: String,
+        thumbnail: URL,
+        full: URL,
+        type: AttachmentType
+    ) {
+        
         self.id = id
         self.thumbnail = thumbnail
         self.full = full
         self.type = type
     }
-
-    public init(id: String, url: URL, type: AttachmentKind) {
-        self.init(id: id, thumbnail: url, full: url, type: type)
+    
+    public init(
+        id: String,
+        url: URL,
+        type: AttachmentType
+    ) {
+        
+        self.init(
+            id: id,
+            thumbnail: url,
+            full: url,
+            type: type
+        )
     }
 }
 
-public enum AttachmentKind: String, Codable {
+public enum AttachmentType: String, Codable {
     case image
     case video
     
@@ -38,9 +54,9 @@ public enum AttachmentKind: String, Codable {
             return "Video"
         }
     }
-
-    public init(_ mediaKind: MediaKind) {
-        switch mediaKind {
+    
+    public init(_ mediaType: MediaType) {
+        switch mediaType {
         case .image:
             self = .image
         default:

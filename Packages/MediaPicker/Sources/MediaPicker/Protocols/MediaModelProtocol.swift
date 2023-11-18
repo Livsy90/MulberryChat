@@ -8,7 +8,7 @@
 import SwiftUI
 
 protocol MediaModelProtocol {
-    var mediaKind: MediaKind? { get }
+    var mediaType: MediaType? { get }
     var duration: CGFloat? { get }
 
     func getURL() async -> URL?

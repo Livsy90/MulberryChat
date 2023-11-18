@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum MediaKind {
+public enum MediaType {
     case image
     case video
 }
@@ -22,8 +22,8 @@ public struct Media: Identifiable, Equatable {
 
 public extension Media {
 
-    var type: MediaKind {
-        source.mediaKind ?? .image
+    var type: MediaType {
+        source.mediaType ?? .image
     }
 
     var duration: CGFloat? {
