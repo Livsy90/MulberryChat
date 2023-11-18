@@ -18,26 +18,29 @@ final class VideoViewModel: ObservableObject {
     @Published var isPlaying = false
     @Published var isMuted = false
 
-    private var subscriptions = Set<AnyCancellable>()
     @Published var status: AVPlayer.Status = .unknown
+    
+    private var subscriptions = Set<AnyCancellable>()
 
     init(attachment: Attachment) {
         self.attachment = attachment
     }
 
     func onStart() {
-        if player == nil {
-            self.player = AVPlayer(url: attachment.full)
-            self.player?.publisher(for: \.status)
-                .assign(to: &$status)
-            
-            NotificationCenter.default.addObserver(
-                self,
-                selector: #selector(finishVideo),
-                name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
-                object: nil
-            )
+        guard player == nil else {
+            return
         }
+        
+        player = AVPlayer(url: attachment.full)
+        player?.publisher(for: \.status)
+            .assign(to: &$status)
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(finishVideo),
+            name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
+            object: nil
+        )
     }
 
     func onStop() {
